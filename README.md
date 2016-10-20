@@ -1,8 +1,14 @@
 # basic-reddit-clone-in-php
 
-##Projekat za predmet Web Tehnologije na Elektrotehničkom Fakultetu Sarajevo, akademska godina 2016/17
+Šta je zapravo ovaj projekat?
 
-Naslov kaže dovoljno šta će ovaj projekat biti.
+ * Naslov  dovoljno govori.
+ * Projekat se radi u sklopu predmeta Web Tehnologije na Elektrotehničkom fakultetu Sarajevo, ak. god. 2016/17
 
-Ahmed Popović
-16963
+Ko radi na ovome?
+
+ * Ahmed Popović (index 16963)
+
+Šta još?
+
+ * Ništa, vala.
