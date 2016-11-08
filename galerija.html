@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>basic reddit clone in php - register</title>
+        <title>basic reddit clone in php - galerija post</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,10 +11,10 @@
         <link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/reusable.css">
-        <link rel="stylesheet" href="css/forms.css">
     </head>
 <body>
-	
+
+
 	<div id="topMenu">
 		<div class="container">
 			<div class="row">
@@ -31,7 +31,7 @@
 				<div class="column grid-5 split-2">
 					<ul class="right-aligned mobile-text-center ">
 						<li><a href="search.html">search</a></li>
-						<li class="active"><a href="register.html">register</a></li>
+						<li><a href="register.html">register</a></li>
 						<li><a href="login.html">login</a></li>
 					</ul>
 				</div>
@@ -44,9 +44,7 @@
 			<div class="row">
 				<div class="column grid-12">
 					<ul>
-						<li><a href="login.html">Login</a></li>
-						<li class="active"><a href="register.html">Register</a></li>
-						<li><a href="#">Forgot password?</a></li>
+						<li><a href="#">Back to sub</a></li>
 				</div>
 			</div>
 		</div>
@@ -55,27 +53,13 @@
 	<div class="container" id="mainContent">
     	<div class="row">
     		<div class="column grid-12">
-    			<div class="white-round-box">
-	    			<h1 style="text-align: center;">Register</h1>
-	    			
-	    			<form class="centered-form" id="registerform">
-	    				<p>Username</p>
-	    				<p class="form-error" id="username-error">Username can only contain alphanumeric characters, scores and underscores and must be at least 4 characters long!</p>
-	    				<input type="text" name="username" id="username">
-	    				<p>Password</p>
-	    				<p class="form-error" id="password-error">Password must be at least 8 characters long!</p>
-	    				<input type="password" name="password" id="password">
-	    				<p>Confirm password</p>
-	    				<p class="form-error" id="password-unmatch-error">Passwords do not match!</p>
-	    				<input type="password" name="password2" id="password2">
-	    				<p>Email</p>
-	    				<p class="form-error" id="email-error">The e-mail must be a valid e-mail address.</p>
-	    				<input type="text" name="email" id="email">
-	    				<button type="submit" class="green-btn" value="register">Register</button>
-	    			</form>
+    			<div class="white-round-box image-post">
 
-	    			<div class="clearfix"></div>
-
+					<h1 style="text-align: center;">This is an image post demonstrating the lightbox effect. Just click on the image.</h1>
+	    				    			
+	    			<a class="lightbox" href="javascript:;" data-full="img/bliss.jpg">
+	    				<img src="img/bliss-thumb.jpg">
+	    			</a>
 
     			</div>
     		</div>
@@ -85,5 +69,5 @@
 	</div>
 </body>
 
-    <script src="js/register-validation.js"></script>
+    <script src="js/main.js"></script>
 </html>

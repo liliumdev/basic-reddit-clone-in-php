@@ -53,3 +53,12 @@ input:focus
 		width: 80%;
 	}
 }
+
+.centered-form p.form-error 
+{
+	text-align: center;
+	font-size: 12px;
+	color: #ff0000;
+	font-weight: 300;
+	display: none;
+}

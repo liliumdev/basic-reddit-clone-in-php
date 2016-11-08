@@ -60,9 +60,11 @@
 	    			
 	    			<form class="centered-form" id="loginform">
 	    				<p>Username</p>
-	    				<input type="text" name="username">
+	    				<p class="form-error" id="username-error">Username can only contain alphanumeric characters, scores and underscores and must be at least 4 characters long!</p>
+	    				<input type="text" name="username" id="username">
 	    				<p>Password</p>
-	    				<input type="password" name="password">
+	    				<p class="form-error" id="password-error">Password must be at least 8 characters long!</p>
+	    				<input type="password" name="password" id="password">
 	    				<button type="submit" class="green-btn" value="login">Login</button>
 	    			</form>
 
@@ -77,5 +79,5 @@
 	</div>
 </body>
 
-    <script src="js/main.js"></script>
+    <script src="js/login-validation.js"></script>
 </html>
