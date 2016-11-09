@@ -55,11 +55,11 @@
 * *login.html* - login forma
 * *register.html* - register forma
 * *search.html* - pretraga
-* *main.css* - glavni css fajl za većinu stranica (neki bazni layout)
-* *reusable.css* - dugmadi sad za sad su ovdje samo
-* *forms.css* - stajling za forme
-* *grid.css* - grid sa 12 kolona, bez guttera (možda dodam gutter poslije)
-* *fonts.css* - offline google fonts za Open Sans font
+* *css/main.css* - glavni css fajl za većinu stranica (neki bazni layout)
+* *css/reusable.css* - dugmadi sad za sad su ovdje samo
+* *css/forms.css* - stajling za forme
+* *css/grid.css* - grid sa 12 kolona, bez guttera (možda dodam gutter poslije)
+* *css/fonts.css* - offline google fonts za Open Sans font
 
 ## O projektu
 
