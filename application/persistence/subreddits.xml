@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <subreddit>
+    <id>1</id>
+    <title>AskBRCIP</title>
+    <description>/r/AskBRCIP is the place to ask and answer thought-provoking questions.</description>
+    <subscribers>29</subscribers>
+  </subreddit>
+  <subreddit>
+    <id>2</id>
+    <title>funny</title>
+    <description>reddit's largest humour depository</description>
+    <subscribers>27</subscribers>
+  </subreddit>
+  <subreddit>
+    <id>3</id>
+    <title>todayilearned</title>
+    <description>You learn something new every day; what did you learn today? Submit interesting and specific facts about something that you just found out here.</description>
+    <subscribers>24</subscribers>
+  </subreddit>
+  <subreddit>
+    <id>4</id>
+    <title>science</title>
+    <description>The Science subreddit is a place to share new findings. Read about the latest advances in astronomy, biology, medicine, physics and the social sciences. Find and submit the best writeup on the web about a discovery, and make sure it cites its sources.</description>
+    <subscribers>21</subscribers>
+  </subreddit>
+  <subreddit>
+    <id>5</id>
+    <title>pics</title>
+    <description>100% BETTER QUALITY THAN /R/ASKBRCIP</description>
+    <subscribers>19</subscribers>
+  </subreddit>
+  <subreddit>
+    <id>6</id>
+    <title>worldnews</title>
+    <description>A place for major news from around the world, excluding US-internal news.</description>
+    <subscribers>17</subscribers>
+  </subreddit>
+  <subreddit>
+    <id>7</id>
+    <title>IAmA</title>
+    <description>I Am A, where the mundane becomes fascinating and the outrageous suddenly seems normal.</description>
+    <subscribers>16</subscribers>
+  </subreddit>
+  <subreddit>
+    <id>8</id>
+    <title>gaming</title>
+    <description>A subreddit for (almost) anything related to games - video games, board games, card games, etc. (but not sports).</description>
+    <subscribers>15</subscribers>
+  </subreddit>
+  <subreddit>
+    <id>9</id>
+    <title>videos</title>
+    <description>A great place for video content of all kinds.</description>
+    <subscribers>15</subscribers>
+  </subreddit>
+  <subreddit>
+    <id>10</id>
+    <title>movies</title>
+    <description>News and Discussion about Major Motion Pictures</description>
+    <subscribers>11</subscribers>
+  </subreddit>
+  <subreddit>
+    <id>11</id>
+    <title>copia</title>
+    <description>ppor ccoasfpsof just testing</description>
+    <subscribers>10</subscribers>
+  </subreddit>
+  <subreddit>
+    <id>12</id>
+    <title>nsfw</title>
+    <description>not safe for work</description>
+    <subscribers>9</subscribers>
+  </subreddit>
+</root>

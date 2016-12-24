@@ -1,5 +1,5 @@
 <?php 
-$_customHead = true;
+$_customTitle = 'register';
 $_customHeadContent = '<link rel="stylesheet" href="/static/css/forms.css">';
 include('header.php'); 
 ?>
@@ -54,7 +54,7 @@ include('header.php');
 	</div>
 
 
- <!--   <script src="/static/js/register-validation.js"></script> -->
+   <script src="/static/js/register-validation.js"></script>
 
 <?php 
 include('footer.php'); 

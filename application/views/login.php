@@ -1,5 +1,5 @@
 <?php 
-$_customHead = true;
+$_customTitle = 'login';
 $_customHeadContent = '<link rel="stylesheet" href="/static/css/forms.css">';
 include('header.php'); 
 ?>
@@ -26,7 +26,7 @@ include('header.php');
 	    			<?php
 	    			$this->printErrorsForForms();
 	    			?>
-	    			
+
 	    			<form class="centered-form" id="loginform" action="/main/login" method="POST">
 	    				<p>Username</p>
 	    				<p class="form-error" id="username-error">Username can only contain alphanumeric characters, scores and underscores and must be at least 4 characters long!</p>
@@ -48,7 +48,7 @@ include('header.php');
 	</div>
 
 
-    <!-- <script src="/static/js/login-validation.js"></script> -->
+    <script src="/static/js/login-validation.js"></script>
 
 <?php 
 include('footer.php'); 

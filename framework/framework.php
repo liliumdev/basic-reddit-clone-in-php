@@ -39,11 +39,10 @@ function setup_framework()
     if(!method_exists($controller, $action)){
         $controller = $config['default_error_controller'];
         require_once(APP_DIR . 'controllers/' . $controller . '.php');
-        $action = 'index';
+        $action = 'index_get';
     }
 	
 	// Pozovi datu akciju kontrolera sa svim preostalim parametrima (segmentima)
-
 	$obj = new $controller;
     die(call_user_func_array(array($obj, $action), array_slice($segments, 2)));
 }

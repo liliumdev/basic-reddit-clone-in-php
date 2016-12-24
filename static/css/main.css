@@ -39,7 +39,7 @@ body
 
 #topMenu ul 
 {
-	list-style: none;
+	list-style-type: none;
 	margin: 0;
 }
 
@@ -400,4 +400,53 @@ p.big-centered-text
 	{
 		height: auto;
 	}
+}
+
+.message
+{
+	background-color: #fff;
+	margin-top: 10px;
+}
+
+.message.success
+{
+	background-color: #3eb56f;
+}
+
+.message.error
+{
+	background-color: #d85454;
+}
+
+.message p 
+{
+	font-size: 16px;
+	text-align: center;	
+	color: white;
+	font-weight: 300;
+}
+
+ul#quickRezultati
+{
+	list-style-type: none;
+	padding-left: 0px;
+}
+
+ul#quickRezultati li a
+{
+	display: block;
+	width: 100%;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	border-radius: 4px;
+	background-color: #eee;
+	margin-bottom: 5px;
+	padding-left: 7px;
+	text-decoration: none;
+	color: #3eb56f;
+}
+
+ul#quickRezultati li a:hover 
+{
+	background-color: #f5f5f5;
 }

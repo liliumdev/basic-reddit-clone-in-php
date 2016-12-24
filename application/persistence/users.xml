@@ -3,21 +3,15 @@
   <user>
     <id>1</id>
     <username>admin</username>
-    <password>$2y$10$cq.c7hIt5PMwwhEuFB5GEuLiTnJ46XaDRoQFjPBCP0vA83ahJYefe</password>
-    <!-- admin -->
+    <password>$2y$10$5M11PkqqsP4Jdyxf.N2EeOyYM.tPZGtbhlhtjKKpA.E7AVIOEzEXa</password>
+    <!-- admin123456 -->
     <email>ahmed.popovic@gmail.com</email>
   </user>
   <user>
     <id>2</id>
     <username>liliumdev</username>
-    <password>$2y$10$uJQ.LBCV8OJE0AyDa/g.1eCLxjWbSyk9EnzQdNj4R//lHyYYSJnYq</password>
-    <!-- 123456 -->
+    <password>$2y$10$.owFakVi05PZPMmvIKpo8OM1MI3Fg4SNwj2LWaW5NpK0bSSLwLdfi</password>
+    <!-- 12345678 -->
     <email>skydesign04@gmail.com</email>
-  </user>
-  <user>
-    <id>3</id>
-    <username>&lt;script&gt;injection&lt;/script&gt;</username>
-    <password>$2y$10$t1npAjCODVVgbpZFPRb/xuf6TAUPUknLAx3e6lDWVlGM9AIyd0.Qa</password>
-    <email>email@gmail.com</email>
   </user>
 </root>

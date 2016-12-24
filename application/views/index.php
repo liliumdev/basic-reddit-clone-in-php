@@ -1,4 +1,7 @@
-<?php include('header.php'); ?>
+<?php 
+$_customTitle = 'index';
+include('header.php'); 
+?>
 	<div id="subMenu">
 		<div class="container">
 			<div class="row">

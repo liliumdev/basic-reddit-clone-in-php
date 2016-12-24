@@ -4,7 +4,7 @@ class Controller
 {	
 	public function model($name)
 	{
-		require(APP_DIR . 'models/' . strtolower($name) . '.php');
+		require_once(APP_DIR . 'models/' . strtolower($name) . '.php');
 
 		$model = new $name;
 		return $model;
@@ -18,7 +18,7 @@ class Controller
 		
 	public function utility($name)
 	{
-		require(APP_DIR . 'utilities/' . strtolower($name) . '.php');
+		require_once(APP_DIR . 'utilities/' . strtolower($name) . '.php');
 
 		$helper = new $name;
 		return $helper;
@@ -26,7 +26,7 @@ class Controller
 
 	public function validator($input, $rules)
 	{
-		require(APP_DIR . 'utilities/validator.php');
+		require_once(APP_DIR . 'utilities/validator.php');
 
 		$validator = new Validator($input, $rules);
 		return $validator;
@@ -49,6 +49,16 @@ class Controller
 
 		return null;
 	} 
+
+	public function loggedIn()
+	{		
+		return isset($_SESSION['user']);
+	}
+
+	public function isAdmin()
+	{
+		return $this->loggedIn() && $_SESSION['user'] == 'admin';
+	}
 }
 
 ?>

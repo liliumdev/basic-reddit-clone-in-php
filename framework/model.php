@@ -60,6 +60,18 @@ abstract class Model
         $this->updateTable();
     }
 
+    public function delete()
+    {
+        if ($this->id) 
+        {
+            $xml = static::xml();
+            $cvor = static::findNodes(array('id' => $this->id))[0];
+            unset($cvor[0]);
+            $this->updateTable();
+        } 
+
+    }
+
     public static function find($conditions, $condition = 'and')
     {
         $results = [];
@@ -68,6 +80,8 @@ abstract class Model
             $nodes = static::findNodes($conditions);
         else if($condition == 'or')
             $nodes = static::findNodesWithOrConditions($conditions);
+        else if($condition == 'in')
+            $nodes = static::findNodesWithInConditions($conditions);
 
         foreach ($nodes as $node) {
             $results[] = static::createModelFromXMLNode($node);
@@ -75,7 +89,7 @@ abstract class Model
         return $results;
     }
 
-    public static function first($conditions)
+    public static function first($conditions, $condition = 'and')
     {
         $results = '';
         if($condition == 'and')
@@ -86,12 +100,17 @@ abstract class Model
         return (empty($results) ? null : $results[0]);
     }
 
+    public static function getById($id)
+    {
+        return static::createModelFromXMLNode(static::first(array('id' => $id)));
+    }
+
     public static function all()
     {
         return static::find(array());
     }
 
-    protected function findNodes($conditions)
+    function findNodes($conditions)
     {
         $xml = static::xml();
         $results = [];
@@ -114,7 +133,53 @@ abstract class Model
         return $results;
     }
 
-    protected function findNodesWithOrConditions($conditions)
+    function findNodesWithInConditions($conditions, $max = 10)
+    {
+        $xml = static::xml();
+        $results = [];
+        $i = 0;
+        foreach ($xml->children() as $child) 
+        {            
+            $match = false;
+
+            foreach ($conditions as $atribut => $ocekivano)
+            {
+                if(is_array($ocekivano))
+                {
+                    foreach($ocekivano as $jednoOdOcekivanih)
+                    {
+                        if(strpos(strtolower($child->$atribut), strtolower($jednoOdOcekivanih)) !== false)
+                        {
+                            $match = true;
+                            break 2;
+                        }
+                    }
+                }
+                else 
+                {
+                    if(strpos(strtolower($child->$atribut), strtolower($ocekivano)) !== false)
+                    {
+                        $match = true;
+                        break;
+                    }
+                }
+            }
+
+            if($match)
+            {
+                $results[] = $child;
+                if($max !== false)
+                {
+                    $i = $i + 1;
+                    if($i >= $max)
+                        break;
+                }
+            }
+        }
+        return $results;
+    }
+
+    function findNodesWithOrConditions($conditions)
     {
         $xml = static::xml();
         $results = [];

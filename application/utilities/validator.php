@@ -3,11 +3,13 @@
 class Validator 
 {
 	private $error_messages = [
-        'email' => 'Neispravna e-mail adresa.',
-        'required' => 'Polje $REPLACE$ ne smije biti prazno.',
-        'min' => 'Polje $REPLACE$ mora imati određeni minimalan broj karaktera.',
-        'max' => 'Polje $REPLACE$ mora imati određeni maksimalan broj karaktera.',
-        'identical' => 'Polja $REPLACE$ se ne poklapaju.'
+        'email' => 'Wrong e-mail address.',
+        'required' => 'Field $REPLACE$ must not be empty..',
+        'min' => 'Field $REPLACE$ must have a certain minimal number of characters.',
+        'max' => 'Field $REPLACE$ must have a certain maximum number of characters.',
+        'identical' => 'Fields $REPLACE$ do not match.',
+        'alphanumeric' => 'Field $REPLACE$ must be alphanumeric.',
+        'alphaplus' => 'Field $REPLACE$ allows only alphanumeric characters and the following: . , ; - ! ? _'
     ];
 
 
@@ -73,6 +75,12 @@ class Validator
     		case 'identical':
             	return $this->identical($field, $allParams[1]);
         		break;
+            case 'alphanumeric':
+                return $this->alphanumeric($field);
+                break;
+            case 'alphaplus':
+                return $this->alphaplus($field);
+                break;
         }
     }
 
@@ -102,6 +110,17 @@ class Validator
     private function identical($field, $field2)
     {
     	return $field === $this->input($field2);
+    }
+
+    private function alphanumeric($field)
+    {
+        return ctype_alnum($field);
+    }
+
+    private function alphaplus($field)
+    {
+        $pattern = '/^[0-9a-zA-Z \.\,\;\-!\?_]+$/';
+        return preg_match($pattern, $field) === 1;
     }
 }
 
