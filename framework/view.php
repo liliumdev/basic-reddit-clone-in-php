@@ -13,6 +13,7 @@ class View
 	public function set($var, $val)
 	{
 		$this->pageVariables[$var] = $val;
+		return $this;
 	}
 
 	public function render()
@@ -22,6 +23,17 @@ class View
 		ob_start();
 		require($this->baseTemplate);
 		echo ob_get_clean();
+	}
+
+	public function printErrorsForForms()
+	{
+		if(array_key_exists('errors', $this->pageVariables))
+		{
+			echo "<ul class='form-errors'>";
+			foreach($this->pageVariables['errors'] as $error)
+				echo "<li>$error</li>";
+			echo "</ul>";
+		}
 	}
     
 }

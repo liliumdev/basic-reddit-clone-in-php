@@ -62,3 +62,16 @@ input:focus
 	font-weight: 300;
 	display: none;
 }
+
+ul.form-errors 
+{
+	list-style: none;
+}
+
+ul.form-errors li
+{
+	text-align: center;
+	font-size: 12px;
+	color: #ff0000;
+	font-weight: 300;
+}

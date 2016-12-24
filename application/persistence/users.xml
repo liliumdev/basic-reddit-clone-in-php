@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <user>
+    <id>1</id>
+    <username>admin</username>
+    <password>$2y$10$cq.c7hIt5PMwwhEuFB5GEuLiTnJ46XaDRoQFjPBCP0vA83ahJYefe</password>
+    <!-- admin -->
+    <email>ahmed.popovic@gmail.com</email>
+  </user>
+  <user>
+    <id>2</id>
+    <username>liliumdev</username>
+    <password>$2y$10$uJQ.LBCV8OJE0AyDa/g.1eCLxjWbSyk9EnzQdNj4R//lHyYYSJnYq</password>
+    <!-- 123456 -->
+    <email>skydesign04@gmail.com</email>
+  </user>
+  <user>
+    <id>3</id>
+    <username>&lt;script&gt;injection&lt;/script&gt;</username>
+    <password>$2y$10$t1npAjCODVVgbpZFPRb/xuf6TAUPUknLAx3e6lDWVlGM9AIyd0.Qa</password>
+    <email>email@gmail.com</email>
+  </user>
+</root>

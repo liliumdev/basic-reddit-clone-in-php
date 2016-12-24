@@ -1,29 +1,4 @@
 <?php include('header.php'); ?>
-	
-    <div id="topMenu">
-		<div class="container">
-			<div class="row">
-				<div class="column grid-1 split-1">
-					<a href="index.html"><img src="/static/img/logo.png"></a>
-				</div>
-				<div class="column grid-6 split-2">
-					<ul class="left-aligned mobile-text-center ">
-						<li class="active"><a href="index.html">frontpage</a></li>
-						<li><a href="sub_list.html">sub list</a></li>
-						<li><a href="about.html">about</a></li>
-					</ul>
-				</div>
-				<div class="column grid-5 split-2">
-					<ul class="right-aligned mobile-text-center ">
-						<li><a href="search.html">search</a></li>
-						<li><a href="register.html">register</a></li>
-						<li><a href="login.html">login</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-
 	<div id="subMenu">
 		<div class="container">
 			<div class="row">

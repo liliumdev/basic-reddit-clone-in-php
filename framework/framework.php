@@ -34,6 +34,8 @@ function setup_framework()
 	}
     
     // Je li ovaj kontroler ima ovu akciju? Ako nema, pozovi defaultnu
+    // Funkcija mora biti striktno definisana za tip requesta (get ili post)
+	$action = $action . '_' . strtolower($_SERVER['REQUEST_METHOD']);
     if(!method_exists($controller, $action)){
         $controller = $config['default_error_controller'];
         require_once(APP_DIR . 'controllers/' . $controller . '.php');
@@ -41,6 +43,7 @@ function setup_framework()
     }
 	
 	// Pozovi datu akciju kontrolera sa svim preostalim parametrima (segmentima)
+
 	$obj = new $controller;
     die(call_user_func_array(array($obj, $action), array_slice($segments, 2)));
 }
