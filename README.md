@@ -30,7 +30,7 @@ Potrebno je projekat raspakovati u htdocs i u /application/config/config.php pro
 
 Evo par "highlights" šta se može raditi sa frameworkom:
 
-** Validacija elemenata forme, prosljeđivanja varijabli pogledu i render pogleda **
+**Validacija elemenata forme, prosljeđivanja varijabli pogledu i render pogleda**
 ```php
 $v = $this->validator($this->post(), array(
 	'username' => 'required',
@@ -45,18 +45,18 @@ if(!$v->validate())
 }
 ```
 
-** Traženje korisnika u users.xml fajlu **
+**Traženje korisnika u users.xml fajlu**
 ```php
 $user = $this->model('User')->first(array('username' => $this->post('username'))); // vraća null ako nema korisnika sa ovim username-om
 ```
 
-** U biti je ovo OR upit nad XML fajlom **
+**U biti je ovo OR upit nad XML fajlom**
 ```php
 // Je li vec postoji acc sa ovim username-om ili e-mailom ?
 if($this->model('User')->first(array('username' => $this->post('username'), 'email' => $this->post('email')), 'or') !== null)
 ```
 
-** Kreiranje novog usera i njegovo snimanje users.xml fajl **
+**Kreiranje novog usera i njegovo snimanje users.xml fajl**
 ```php
 $korisnik           = $this->model('User');
 $korisnik->username = $this->post('username');
@@ -65,13 +65,13 @@ $korisnik->email    = $this->post('email');
 $korisnik->save();
 ```
 
-** Pretraga po username-u gdje nam odgovara više username-a **
+**Pretraga po username-u gdje nam odgovara više username-a**
 ```php
 $korisnici_sa_brojem_99_ili_101_ili_103_u_imenu = $this->model('User')->find(array('username' => array('99', '101', '103')), 'in');
 
 ```
 
-** Kontroler akcija koja se poziva kada se uradi GET /main/hello **
+**Kontroler akcija koja se poziva kada se uradi GET /main/hello**
 ```php
 class Main extends Controller
 {
@@ -82,7 +82,7 @@ class Main extends Controller
 }
 ```
 
-** Kontroler akcija koja se poziva kada se uradi GET /subreddit/delete/10 sa provjerom je li korisnik admin, brisanje elementa iz XML fajla sa odgovarajućim ID navedenim u URLu **
+**Kontroler akcija koja se poziva kada se uradi GET /subreddit/delete/10 sa provjerom je li korisnik admin, brisanje elementa iz XML fajla sa odgovarajućim ID navedenim u URLu**
 ```php
 class Subs extends Controller
 {
@@ -98,7 +98,7 @@ class Subs extends Controller
 }
 ```
 
-** itd, itd, itd.. *
+**itd, itd, itd. *
 
 ## Spirala 2
 
