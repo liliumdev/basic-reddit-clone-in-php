@@ -77,11 +77,11 @@ abstract class Model
         $results = [];
         $nodes = '';
         if($condition == 'and')
-            $nodes = static::findNodes($conditions);
+            $nodes = $this->findNodes($conditions);
         else if($condition == 'or')
-            $nodes = static::findNodesWithOrConditions($conditions);
+            $nodes = $this->findNodesWithOrConditions($conditions);
         else if($condition == 'in')
-            $nodes = static::findNodesWithInConditions($conditions);
+            $nodes = $this->findNodesWithInConditions($conditions);
 
         foreach ($nodes as $node) {
             $results[] = static::createModelFromXMLNode($node);
@@ -93,9 +93,9 @@ abstract class Model
     {
         $results = '';
         if($condition == 'and')
-            $results = static::findNodes($conditions);
+            $results = $this->findNodes($conditions);
         else if($condition == 'or')
-            $results = static::findNodesWithOrConditions($conditions);
+            $results = $this->findNodesWithOrConditions($conditions);
 
         return (empty($results) ? null : $results[0]);
     }
@@ -244,7 +244,7 @@ abstract class Model
         return ++$noviID;
     }
 
-    protected function tablePath()
+    protected static function tablePath()
     {
     	return APP_DIR . 'persistence/' . static::$table . '.xml';
     }
