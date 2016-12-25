@@ -77,11 +77,11 @@ abstract class Model
         $results = [];
         $nodes = '';
         if($condition == 'and')
-            $nodes = $this->findNodes($conditions);
+            $nodes = static::findNodes($conditions);
         else if($condition == 'or')
-            $nodes = $this->findNodesWithOrConditions($conditions);
+            $nodes = static::findNodesWithOrConditions($conditions);
         else if($condition == 'in')
-            $nodes = $this->findNodesWithInConditions($conditions);
+            $nodes = static::findNodesWithInConditions($conditions);
 
         foreach ($nodes as $node) {
             $results[] = static::createModelFromXMLNode($node);
@@ -93,9 +93,9 @@ abstract class Model
     {
         $results = '';
         if($condition == 'and')
-            $results = $this->findNodes($conditions);
+            $results = static::findNodes($conditions);
         else if($condition == 'or')
-            $results = $this->findNodesWithOrConditions($conditions);
+            $results = static::findNodesWithOrConditions($conditions);
 
         return (empty($results) ? null : $results[0]);
     }
@@ -110,7 +110,7 @@ abstract class Model
         return static::find(array());
     }
 
-    function findNodes($conditions)
+    public static function findNodes($conditions)
     {
         $xml = static::xml();
         $results = [];
@@ -133,7 +133,7 @@ abstract class Model
         return $results;
     }
 
-    function findNodesWithInConditions($conditions, $max = 10)
+    public static function findNodesWithInConditions($conditions, $max = 10)
     {
         $xml = static::xml();
         $results = [];
@@ -179,7 +179,7 @@ abstract class Model
         return $results;
     }
 
-    function findNodesWithOrConditions($conditions)
+    public static function findNodesWithOrConditions($conditions)
     {
         $xml = static::xml();
         $results = [];
