@@ -10,9 +10,9 @@
 * (2) Admin korisniku se na vrhu podstranice listi subreddita omogućuje export osnovnih podataka o subredditima u .csv fajl.
 * (3) Generiše se lista svih subreddita i broja njihovih pretplatnika i exportuje u PDF fajl.
 * (4) Napravljena je pretraga subreddita sa live preporukama po dva polja (title i description). Stranica se nikako ne reloada.
+* (5) http://php-brcip.44fs.preview.openshiftapps.com/
 
 ### II - Šta nije urađeno?
-* (5) Trenutno čekam account na OpenShift.
 
 ### III - Bugovi koji su primjećeni, znamo rješenje, ali nisu rješeni
 * Trenutno nema bugova koje sam primjetio.
