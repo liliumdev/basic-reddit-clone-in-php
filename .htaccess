@@ -7,3 +7,5 @@ RewriteRule . index.php [L]
 
 # Prevent file browsing
 Options -Indexes
+
+php_value error_reporting 22519
