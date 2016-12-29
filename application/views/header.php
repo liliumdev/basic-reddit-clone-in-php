@@ -46,7 +46,13 @@
                     <li <?php $this->isActive('/main/login'); ?> ><a href="/main/login">login</a></li>
                     <?php 
                     } else {
+                        if($_SESSION['user'] == 'admin')
+                        {
                     ?>
+                    <li <?php $this->isActive('/main/admin'); ?> ><a href="/main/admin">admin</a></li>
+                    <?php
+                        }
+                    ?>                    
                     <li><a href="/main/logout">logout</a></li>
                     <?php 
                     }

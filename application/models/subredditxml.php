@@ -1,6 +1,6 @@
 <?php
 
-class Subreddit extends ModelMySQL
+class SubredditXML extends ModelXML
 {
 	protected static $table = 'subreddits';
 

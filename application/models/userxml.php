@@ -1,6 +1,6 @@
 <?php
 
-class User extends ModelMySQL
+class UserXML extends ModelXML
 {
 	protected static $table = 'users';
 

@@ -1,6 +1,8 @@
 <?php 
 $_customTitle = 'index';
 include('header.php'); 
+
+
 ?>
 	<div id="subMenu">
 		<div class="container">
