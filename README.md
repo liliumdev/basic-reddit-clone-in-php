@@ -2,6 +2,28 @@
 
 *(osnovne stvari o projektu se nalaze ispod)*
 
+# Spirala 4
+
+### I - Šta je urađeno ?
+* (a) Napravljena MySQL databaza, ERD i SQL dump su u repozitoriju.
+* (b) Napravljena skripta za importovanje XML podataka u MySQL, dostupna samo adminu iz admin panela. Ubacuje samo podatke koji trenutno nisu u MySQL databazi.
+* (c) Prepravljen je projekat da koristi MySQL umjesto XML (u biti je stari model.php razdvojen na modelmysql.php i modelxml.php, a 'interfejs', odnosno korištenje obje klase je skoro identično).
+* (d) Stranica je hostana na http://phps-brcip2.44fs.preview.openshiftapps.com/
+* (e) Metoda je /main/search_ajax i prima POST zahtjev sa parametrima max i query. Vraća JSON-enkodirano maksimalno $max subreddita koji u svom naslovu ili opisu sadrže $query.
+
+### II - Šta nije urađeno?
+
+* (a) Još uvijek nisu dodane nove forme za CRUD u nove MySQL tabele.
+* (f) Nije testiran web servis sa POSTMAN-om
+
+### III - Bugovi koji su primjećeni, znamo rješenje, ali nisu rješeni
+
+### IV - Bugovi koji su primjećeni, ali ne znamo rješenje
+
+### V - Lista fajlova
+
+Struktura fajlova je skoro ista kao i u spirali 3.
+
 ## Spirala 3
 
 ### I - Šta je urađeno ?
@@ -10,7 +32,7 @@
 * (2) Admin korisniku se na vrhu podstranice listi subreddita omogućuje export osnovnih podataka o subredditima u .csv fajl.
 * (3) Generiše se lista svih subreddita i broja njihovih pretplatnika i exportuje u PDF fajl.
 * (4) Napravljena je pretraga subreddita sa live preporukama po dva polja (title i description). Stranica se nikako ne reloada.
-* (5) http://php-brcip.44fs.preview.openshiftapps.com/
+* (5) http://phps-brcip2.44fs.preview.openshiftapps.com/
 
 ### II - Šta nije urađeno?
 
