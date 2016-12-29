@@ -4,7 +4,8 @@ class Main extends Controller
 {	
 	function test_get()
 	{
-	//	$subreddits = $this->model('Subreddit')->findNodesWithInConditions(array('title' => $query, 'description' => $query), ( (int)$max != -1 ? (int)$max : false));
+		var_dump($_ENV);
+		var_dump(getenv('OPENSHIFT_MYSQL_DB_HOST'));
 	}
 
 	function index_get()
