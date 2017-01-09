@@ -3,15 +3,12 @@ $_customHeadContent = '<link rel="stylesheet" href="/static/css/forms.css">';
 $_customTitle = 'subreddits';
 include('header.php'); 
 ?>
-
 	<div id="subMenu">
 		<div class="container">
 			<div class="row">
 				<div class="column grid-12">
 					<ul>
 						<li class="active"><a href="#">Top</a></li>
-						<li><a href="#">New</a></li>
-						<li><a href="#">Most discussed</a></li>
 				</div>
 			</div>
 		</div>
@@ -55,7 +52,7 @@ include('header.php');
 		    				<div class="thread-info">
 		    					<div class="row">
 		    						<div class="column grid-8">
-				    					<a href="#" class="title">sub/<b><?php echo $subreddit->title; ?></b></a>
+				    					<a href="/subs/sub/<?php echo $subreddit->title; ?>" class="title">sub/<b><?php echo $subreddit->title; ?></b></a>
 				    					<p class="subtitle"><?php echo $subreddit->description; ?></p>
 				    					<?php
 				    					if($_loggedIn && $_SESSION['user'] == 'admin')
@@ -72,7 +69,24 @@ include('header.php');
 					    				?>
 			    					</div>
 			    					<div class="column grid-4">
-			    						<a href="#" class="green-btn right-floated-btn">+ subscribe</a>
+			    						<?php
+			    						if($_loggedIn)
+			    						{
+				    						if(in_array($subreddit->id, $subscribed))
+				    						{
+			    							?>
+			    							<a href="/subs/unsubscribe/<?php echo $subreddit->id; ?>" class="green-btn right-floated-btn">- unsubscribe</a>
+			    							<?php
+			    							}
+			    							else 
+			    							{
+		    								?>
+				    						<a href="/subs/subscribe/<?php echo $subreddit->id; ?>" class="green-btn right-floated-btn">+ subscribe</a>
+				    						<?php
+				    						}
+			    						}
+			    						?>
+
 			    					</div>
 		    					</div>
 		    				</div>

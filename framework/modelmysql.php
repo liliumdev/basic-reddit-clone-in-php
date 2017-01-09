@@ -95,7 +95,14 @@ abstract class ModelMySQL
 
     }
 
-    public function find($conditions, $condition = 'and', $limit = false)
+    public function query($query, $params)
+    {
+        $statement = $this->db->prepare($query);
+        $statement->execute($params);
+        return $statement;
+    }
+
+    public function find($conditions, $condition = 'and', $limit = false, $order = '')
     {
         $query = "SELECT * FROM " . static::$table;
         if(count($conditions) > 0 )
@@ -157,13 +164,13 @@ abstract class ModelMySQL
                 }
             }
         }
-        //$params .= '1 = 1'; // da ne brisem zadnji AND/OR ili sta vec xD
         $params = substr($params, 0, strlen($params) - 4);
         $query = $query . $params;  
         if($limit !== false)
         {
             $query .= " LIMIT $limit";     
         }
+        $query .= " " . $order;
         $statement = $this->db->prepare($query);
         $statement->execute($prepared);
         $rows = $statement->fetchAll(PDO::FETCH_ASSOC);

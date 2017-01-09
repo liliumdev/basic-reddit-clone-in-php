@@ -11,7 +11,6 @@ include('header.php');
 					<ul>
 						<li><a href="/main/login">Login</a></li>
 						<li class="active"><a href="/main/register">Register</a></li>
-						<li><a href="#">Forgot password?</a></li>
 				</div>
 			</div>
 		</div>

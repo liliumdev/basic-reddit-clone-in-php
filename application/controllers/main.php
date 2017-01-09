@@ -2,15 +2,14 @@
 
 class Main extends Controller 
 {	
-	function test_get()
-	{
-		var_dump($_ENV);
-		var_dump(getenv('OPENSHIFT_MYSQL_DB_HOST'));
-	}
-
 	function index_get()
 	{
-		$this->view('index')->render();
+		$postsSel = $this->model('Post')->query("SELECT posts.*, users.username FROM posts, users WHERE posts.author_id = users.id ORDER BY votes DESC LIMIT 20", array());
+		$posts = $postsSel->fetchAll(PDO::FETCH_CLASS);
+
+		$latestPosts = $this->model('Post')->find(array(), 'and', false, 'ORDER BY created_at DESC LIMIT 5');
+		$latestUsers = $this->model('User')->find(array(), 'and', false, 'ORDER BY id DESC LIMIT 5');
+		$this->view('index')->set('posts', $posts)->set('latestPosts', $latestPosts)->set('latestUsers', $latestUsers)->render();
 	}    
 
 	function login_get()
@@ -53,6 +52,7 @@ class Main extends Controller
 		if($user !== null && password_verify($this->post('password'), $user->password))
 		{
 	        $_SESSION['user'] = $this->post('username');
+	        $_SESSION['user_id'] = $user->id;
 	        $this->redirect('');
 	        return;
 		}
@@ -112,7 +112,16 @@ class Main extends Controller
 
 	function subreddits_get()
 	{		
-		$this->view('subreddits')->set('subreddits', $this->model('Subreddit')->all())->render();
+		$subscribed = [];
+
+		if($this->loggedIn())
+		{
+			$subscriptions = $this->model('Subscriber')->find(array('user_id' => $_SESSION['user_id']));
+			foreach($subscriptions as $subscription)
+				$subscribed[] = $subscription->subreddit_id;
+		}
+
+		$this->view('subreddits')->set('subreddits', $this->model('Subreddit')->find(array(), 'and', false, 'ORDER BY subscribers DESC'))->set('subscribed', $subscribed)->render();
 	}
 
 	function search_get()

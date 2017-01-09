@@ -4,6 +4,20 @@ function gotClass(elem, className)
     return elem.className.split(' ').indexOf(className) > -1;
 }
 
+function vote(what, id, direction, counter)
+{
+	console.log(counter);
+	var xhr = new XMLHttpRequest();
+	xhr.open('POST', '/vote/' + what + '/' + id + '/' + direction, true);
+	xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+	xhr.onload = function() 
+	{
+    	counter.innerHTML = this.responseText;
+    	console.log(this.responseText);
+	};
+	xhr.send('');
+}
+
 // Dropdown module
 var dropdowns = document.querySelectorAll('.dropdown-handler');
 for (var i = 0; i < dropdowns.length; i++) 

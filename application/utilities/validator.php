@@ -119,7 +119,7 @@ class Validator
 
     private function alphaplus($field)
     {
-        $pattern = '/^[0-9a-zA-Z \.\,\;\-!\?_]+$/';
+        $pattern = '/^[0-9a-zA-Z @#\.\,\;\-!\?_]+$/';
         return preg_match($pattern, $field) === 1;
     }
 }

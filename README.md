@@ -13,7 +13,6 @@
 
 ### II - Šta nije urađeno?
 
-* (a) Još uvijek nisu dodane nove forme za CRUD u nove MySQL tabele.
 * (f) Nije testiran web servis sa POSTMAN-om
 
 ### III - Bugovi koji su primjećeni, znamo rješenje, ali nisu rješeni
@@ -22,7 +21,7 @@
 
 ### V - Lista fajlova
 
-Struktura fajlova je skoro ista kao i u spirali 3.
+Struktura fajlova je skoro ista kao i u spirali 3. Dodan je i phpMyAdmin za laksu izmjenu DB na OpenShift.
 
 ## Spirala 3
 
